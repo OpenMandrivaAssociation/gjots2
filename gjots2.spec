@@ -73,7 +73,7 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
 %{py_sitedir}/*
-%{_libdir}/%{name}
+%{_prefix}/lib/%{name}
 %{_mandir}/man1/*
 %{_menudir}/%{name}
 %{_iconsdir}/%{name}.png
