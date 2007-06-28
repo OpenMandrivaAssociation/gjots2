@@ -1,6 +1,6 @@
 %define name	gjots2
-%define version 2.3.4
-%define release %mkrel 2
+%define version 2.3.5
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -67,14 +67,14 @@ rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc AUTHORS README COPYING gjots2.gjots
+%doc %{_docdir}/*
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
+%{py_sitedir}/*
 %{_libdir}/%{name}
 %{_mandir}/man1/*
-
 %{_menudir}/%{name}
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
