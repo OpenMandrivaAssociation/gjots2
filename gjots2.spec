@@ -37,16 +37,16 @@ python setup.py install --root=%buildroot
 %find_lang %name
 
 # menu entry
-mkdir -p %{buildroot}%{_menudir}
-cat << _EOF_ > %{buildroot}%{_menudir}/%{name}
-?package(%{name}): \
- command="%{_bindir}/%{name}" \
- icon="%{name}.png" \
- title="Gjots" \
- needs="x11" \
- section="Office/Accessories" \
- longtitle="A simple note jotting utility" \
- startup_notify="yes"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name} 
+Icon=%{name} 
+Name=Gjots 
+Categories=Office; 
+Comment=A simple note jotting utility 
+StartupNotify=yes
 _EOF_
 
 # icons
@@ -74,7 +74,7 @@ rm -rf %{buildroot}
 %{py_sitedir}/*
 %{_prefix}/lib/%{name}
 %{_mandir}/man1/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
