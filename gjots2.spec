@@ -47,7 +47,7 @@ Name=Gjots
 Categories=Office; 
 Comment=A simple note jotting utility 
 StartupNotify=yes
-_EOF_
+EOF
 
 # icons
 install -d -m 755 %{buildroot}%{_liconsdir} %{buildroot}%{_iconsdir} %{buildroot}%{_miconsdir}
