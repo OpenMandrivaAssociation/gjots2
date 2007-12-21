@@ -11,6 +11,7 @@ Group:		Graphical desktop/GNOME
 URL:		http://bhepple.freeshell.org/gjots/
 Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	gnome-python
 Requires:	gnome-python-gconf
 Requires:	gnome-python-gnomevfs
