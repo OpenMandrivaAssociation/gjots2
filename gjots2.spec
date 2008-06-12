@@ -56,11 +56,15 @@ convert -geometry 48x48 gjots.png %{buildroot}%{_liconsdir}/%{name}.png
 convert -geometry 32x32 gjots.png %{buildroot}%{_iconsdir}/%{name}.png
 convert -geometry 16x16 gjots.png %{buildroot}%{_miconsdir}/%{name}.png
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %{buildroot}
