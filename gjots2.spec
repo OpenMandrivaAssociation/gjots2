@@ -1,6 +1,6 @@
 %define name	gjots2
 %define version 2.3.5
-%define release %mkrel 2
+%define release %mkrel 4
 
 Name:		%{name}
 Version:	%{version}
