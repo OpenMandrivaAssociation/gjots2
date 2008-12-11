@@ -19,7 +19,7 @@ Requires:	pygtk2.0-libglade >= 2.2.0
 Requires:	openssl
 Requires:	gnupg
 Requires:	m4
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	python-devel
 
 %description
