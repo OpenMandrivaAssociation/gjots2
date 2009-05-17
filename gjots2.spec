@@ -1,12 +1,12 @@
 %define name	gjots2
 %define version 2.3.5
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	A note jotter in tree structure
-License:	GPL
+License:	GPLv2
 Group:		Graphical desktop/GNOME
 URL:		http://bhepple.freeshell.org/gjots/
 Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tar.bz2
@@ -37,18 +37,13 @@ rm -rf %{buildroot}
 python setup.py install --root=%buildroot
 %find_lang %name
 
-# menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
-[Desktop Entry]
-Type=Application
-Exec=%{_bindir}/%{name} 
-Icon=%{name} 
-Name=Gjots 
-Categories=Office; 
-Comment=A simple note jotting utility 
-StartupNotify=yes
-EOF
+# fix desktop file
+sed -i -e 's/gjots.png/gjots/' %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-install \
+	--remove-key=Encoding \
+	--remove-category=Application \
+	--dir %{buildroot}%{_datadir}/applications \
+	%{buildroot}%{_datadir}/applications/*
 
 # icons
 install -d -m 755 %{buildroot}%{_liconsdir} %{buildroot}%{_iconsdir} %{buildroot}%{_miconsdir}
@@ -74,12 +69,11 @@ rm -rf %{buildroot}
 %doc %{_docdir}/*
 %{_bindir}/*
 %{_datadir}/%{name}
-%{_datadir}/applications/*.desktop
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 %{py_sitedir}/*
 %{_prefix}/lib/%{name}
 %{_mandir}/man1/*
-%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
