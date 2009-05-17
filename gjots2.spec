@@ -21,6 +21,7 @@ Requires:	gnupg
 Requires:	m4
 BuildRequires:	imagemagick
 BuildRequires:	python-devel
+BuildRequires:	desktop-file-utils
 
 %description
 GJots2 can be used to organize one's jottings into a tree structure,
