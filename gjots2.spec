@@ -1,6 +1,6 @@
 %define name	gjots2
-%define version 2.3.5
-%define release %mkrel 6
+%define version 2.3.8
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,7 +9,7 @@ Summary:	A note jotter in tree structure
 License:	GPLv2
 Group:		Graphical desktop/GNOME
 URL:		http://bhepple.freeshell.org/gjots/
-Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tar.bz2
+Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tgz
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	gnome-python
