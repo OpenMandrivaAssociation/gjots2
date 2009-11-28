@@ -1,5 +1,5 @@
 %define name	gjots2
-%define version 2.3.8
+%define version 2.3.9
 %define release %mkrel 1
 
 Name:		%{name}
@@ -16,6 +16,7 @@ Requires:	gnome-python
 Requires:	gnome-python-gconf
 Requires:	gnome-python-gnomevfs
 Requires:	pygtk2.0-libglade >= 2.2.0
+Requires:	python-gtksourceview
 Requires:	openssl
 Requires:	gnupg
 Requires:	m4
