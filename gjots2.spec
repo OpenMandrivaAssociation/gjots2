@@ -1,17 +1,12 @@
-%define name	gjots2
-%define version 2.4.1
-%define release 1
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		gjots2
+Version:	2.4.1
+Release:	1
 Summary:	A note jotter in tree structure
 License:	GPLv2
 Group:		Graphical desktop/GNOME
 URL:		http://bhepple.freeshell.org/gjots/
 Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tgz
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	pygtk2.0
 Requires:	pygtk2.0-libglade >= 2.2.0
 Requires:	python-gtksourceview
@@ -33,8 +28,8 @@ and passwords.
 %setup -q
 
 %install
-python setup.py install --root=%buildroot
-%find_lang %name
+python setup.py install --root=%{buildroot}
+%find_lang %{name}
 
 # fix desktop file
 sed -i -e 's/gjots.png/gjots/' %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -50,13 +45,13 @@ convert -geometry 48x48 pixmaps/gjots.png %{buildroot}%{_liconsdir}/%{name}.png
 convert -geometry 32x32 pixmaps/gjots.png %{buildroot}%{_iconsdir}/%{name}.png
 convert -geometry 16x16 pixmaps/gjots.png %{buildroot}%{_miconsdir}/%{name}.png
 
-%files -f %name.lang
+%files -f %{name}.lang
 %doc %{_docdir}/*
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
-%{py_sitedir}/*
+%{py_puresitedir}/*
 %{_prefix}/lib/%{name}
 %{_mandir}/man1/*
 %{_iconsdir}/%{name}.png
