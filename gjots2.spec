@@ -1,6 +1,6 @@
 Name:		gjots2
 Version:	2.4.1
-Release:	1
+Release:	2
 Summary:	A note jotter in tree structure
 License:	GPLv2
 Group:		Graphical desktop/GNOME
