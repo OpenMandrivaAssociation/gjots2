@@ -4,7 +4,7 @@ Release:	2
 Summary:	A note jotter in tree structure
 License:	GPLv2
 Group:		Graphical desktop/GNOME
-URL:		http://bhepple.freeshell.org/gjots/
+URL:		https://bhepple.freeshell.org/gjots/
 Source:		http://bhepple.freeshell.org/gjots/%{name}-%{version}.tgz
 BuildArch:	noarch
 Requires:	pygtk2.0
